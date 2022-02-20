@@ -14,7 +14,7 @@ const App = () => {
   if (!address) {
     return (
       <div className="landing">
-        <h1>Welcome to Super Cool DAO</h1>
+        <h1>Welcome to Our NFT Analytics</h1>
         <button onClick={() => connectWallet("injected")} className="btn-hero">
           Connect your wallet
         </button>
