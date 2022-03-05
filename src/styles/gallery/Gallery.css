@@ -1,0 +1,32 @@
+.gallery-wrapper {
+    width: 100vw;
+}
+
+.gallery {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.gallery-nft-row {
+    width: 640px;
+    height: 200px;
+    display: flex;
+    flex-flow: row;
+    justify-content: left;
+    margin: 10px;
+    gap: 20px;
+}
+
+.gallery-nft {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.gallery-nft img {
+    width: 100px;
+    height: 100px;
+}

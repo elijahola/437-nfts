@@ -1,0 +1,9 @@
+.navbar {
+    display: flex;
+    flex-flow: row;
+    justify-content: left;
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    gap: 20px;
+}

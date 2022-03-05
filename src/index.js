@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import { MoralisProvider, useMoralis } from "react-moralis";
-
-// Import ThirdWeb
 import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
+import "./styles/index.css";
+import Landing from "./components/landing/Landing";
+import Navbar from "./components/navbar/Navbar";
+import ConnectWallet from "./components/wallet/ConnectWallet";
+import {
+    BrowserRouter as Router,
+    Routes as Switch,
+    Route,
+} from "react-router-dom";
+import Gallery from "./components/gallery/Gallery";
 
 // Include what chains you wanna support.
 // 4 = Rinkeby.
@@ -24,15 +31,19 @@ const APP_ID = "UMnyq2Mr8Gr4gBqsg8xzfGOXuajilRxFojia5tHM";
 
 // Finally, wrap App with the MoralisProvider and the ThirdwebWeb3Provider
 ReactDOM.render(
-    <React.StrictMode>
-        <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
-            <ThirdwebWeb3Provider
-                connectors={connectors}
-                supportedChainIds={supportedChainIds}
-            >
-                <App />
-            </ThirdwebWeb3Provider>
-        </MoralisProvider>
-    </React.StrictMode>,
+    <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
+        <ThirdwebWeb3Provider
+            connectors={connectors}
+            supportedChainIds={supportedChainIds}
+        >
+            <Router>
+                <Switch>
+                    <Route path="/" element={<Landing />} />
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="*" element={<h1>Page not found!</h1>} status={404} />
+                </Switch>
+            </Router>
+        </ThirdwebWeb3Provider>
+    </MoralisProvider>,
     document.getElementById("root")
 );

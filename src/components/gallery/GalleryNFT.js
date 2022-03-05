@@ -1,15 +1,17 @@
 import React from "react";
+import "../../styles/gallery/Gallery.css";
 
 const GalleryNFT = (nft) => {
     const metadata = JSON.parse(nft.nft.metadata);
-    console.log("GalleryNFT metadata:\n", metadata);
 
     return (
-        <div>
-            {/* <img src={metadata["image"]} /> */}
+        <div className="gallery-nft">
+            <img src={metadata["image"]} />
             <p>{metadata["name"]}</p>
-            <p>{metadata["description"]}</p>
+            {/* <p>{metadata["description"]}</p> */}
+            
         </div>
     );
 };
+
 export default GalleryNFT;
