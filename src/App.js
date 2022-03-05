@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useWeb3 } from "@3rdweb/hooks";
 import Gallery from "./components/gallery/Gallery";
 import {
     BrowserRouter as Router,
@@ -7,9 +6,7 @@ import {
     Route,
 } from "react-router-dom";
 import Landing from "./components/landing/Landing";
-import Navbar from "./components/navbar/Navbar";
 import { useMoralis } from "react-moralis";
-
 const App = () => {
     const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
     useMoralis();

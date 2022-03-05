@@ -1,7 +1,7 @@
 import GalleryNFT from "./GalleryNFT";
 import "../../styles/gallery/Gallery.css";
 
-const GalleryNFTRow = (nfts) => {
+const GalleryRow = (nfts) => {
 
     return (
         <div className="gallery-nft-row">
@@ -14,4 +14,4 @@ const GalleryNFTRow = (nfts) => {
     );
 };
 
-export default GalleryNFTRow;
+export default GalleryRow;

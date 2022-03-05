@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import { MoralisProvider, useMoralis } from "react-moralis";
+import { MoralisProvider } from "react-moralis";
 import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import "./styles/index.css";
 import Landing from "./components/landing/Landing";
-import Navbar from "./components/navbar/Navbar";
-import ConnectWallet from "./components/wallet/ConnectWallet";
 import {
     BrowserRouter as Router,
     Routes as Switch,
@@ -40,7 +37,11 @@ ReactDOM.render(
                 <Switch>
                     <Route path="/" element={<Landing />} />
                     <Route path="/gallery" element={<Gallery />} />
-                    <Route path="*" element={<h1>Page not found!</h1>} status={404} />
+                    <Route
+                        path="*"
+                        element={<h1>Page not found!</h1>}
+                        status={404}
+                    />
                 </Switch>
             </Router>
         </ThirdwebWeb3Provider>

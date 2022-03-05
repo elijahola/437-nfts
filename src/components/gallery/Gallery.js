@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
-import GalleryNFT from "./GalleryNFT";
-import { useWeb3 } from "@3rdweb/hooks";
 import "../../styles/gallery/Gallery.css";
-import ConnectWallet from "../wallet/ConnectWallet";
-import GalleryNFTRow from "./GalleryNFTRow";
+import GalleryRow from "./GalleryRow";
 import Navbar from "../navbar/Navbar";
 
 const Gallery = () => {
-    const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading, authenticate } =
+    const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
         useMoralis();
     const { Moralis, user } = useMoralis();
     const [nfts, setNfts] = useState([]);
@@ -24,12 +21,14 @@ const Gallery = () => {
         return nfts;
     };
 
+    // Makes sure user's wallet is connected
     useEffect(() => {
         const connectorId = window.localStorage.getItem("connectorId");
         if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
             enableWeb3({ provider: connectorId });
     }, [isAuthenticated, isWeb3Enabled]);
 
+    // Once authenticated, update address state
     useEffect(() => {
         if (isAuthenticated) {
             setAddress(user.attributes.ethAddress);
@@ -49,12 +48,11 @@ const Gallery = () => {
                     if (i != 0 && i % 3 == 0) {
                         groupedNFTs.push(temp);
                         temp = [];
-    
                     }
                     temp.push(nft);
                 });
 
-                groupedNFTs.push(temp)
+                groupedNFTs.push(temp);
                 // Update NFTs state with the grouped NFTs
                 setNfts(groupedNFTs);
             }
@@ -68,11 +66,11 @@ const Gallery = () => {
             <div className="gallery-wrapper">
                 <h1>Gallery</h1>
                 <div className="gallery">
-                    {
-                        address ? nfts.map((nftGroup, i) => {
-                            return <GalleryNFTRow nfts={nftGroup} key={i} />
-                        }) : "Loading..."
-                    }
+                    {address
+                        ? nfts.map((nftGroup, i) => {
+                              return <GalleryRow nfts={nftGroup} key={i} />;
+                          })
+                        : "No address found..."}
                 </div>
             </div>
         </React.Fragment>
