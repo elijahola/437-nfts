@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useMoralis } from "react-moralis";
 
+import Grid from "./grid";
+
 // import thirdweb
 import { useWeb3 } from "@3rdweb/hooks";
 
@@ -45,8 +47,11 @@ const App = ({ isServerInfo }) => {
   // This is the case where we have the user's address
   // which means they've connected their wallet to our site!
   return (
+    
     <div className="landing">
-      <h1>👀 wallet connected, now what!</h1>
+      <h1>👀 wallet connected!</h1>
+      <Grid></Grid>
+      
     </div>
   );
 };
