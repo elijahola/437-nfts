@@ -3,13 +3,13 @@ import { useMoralis } from "react-moralis";
 import "../../styles/gallery/Gallery.css";
 import GalleryRow from "./GalleryRow";
 import Navbar from "../navbar/Navbar";
+import { useWeb3 } from "@3rdweb/hooks";
 
 const Gallery = () => {
     const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
         useMoralis();
     const { Moralis, user } = useMoralis();
     const [nfts, setNfts] = useState([]);
-    const [address, setAddress] = useState("");
 
     // Grabs all ERC-1155 and ERC-721 NFTs associated
     // with the user's wallet on the rinkeby network
@@ -28,12 +28,14 @@ const Gallery = () => {
             enableWeb3({ provider: connectorId });
     }, [isAuthenticated, isWeb3Enabled]);
 
-    // Once authenticated, update address state
-    useEffect(() => {
-        if (isAuthenticated) {
-            setAddress(user.attributes.ethAddress);
-        }
-    }, [isAuthenticated]);
+    // // Once authenticated, update address state
+    // useEffect(() => {
+    //     if (isAuthenticated) {
+    //         setAddress(user.attributes.ethAddress);
+    //     }
+    // }, [isAuthenticated]);
+
+    const { connectWallet, address, error, provider } = useWeb3();
 
     // Calls getNFTs when the component is mounted
     // and updates nfts state with fetched NFTs
@@ -59,6 +61,20 @@ const Gallery = () => {
         });
         return () => (mounted = false);
     }, [address]);
+
+    if (!address) {
+        return (
+            <div className="landing">
+                <h1>Welcome to Our NFT Analytics</h1>
+                <button
+                    onClick={() => connectWallet("injected")}
+                    className="btn-hero"
+                >
+                    Connect your wallet
+                </button>
+            </div>
+        );
+    }
 
     return (
         <React.Fragment>

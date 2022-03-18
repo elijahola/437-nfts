@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useMoralis } from "react-moralis";
 import Navbar from "../navbar/Navbar";
+import { useWeb3 } from "@3rdweb/hooks";
 
 const Landing = () => {
     const {
@@ -10,7 +11,6 @@ const Landing = () => {
         isWeb3EnableLoading,
         user,
     } = useMoralis();
-    const [address, setAddress] = useState("");
 
     // Makes sure user's wallet is connected
     useEffect(() => {
@@ -19,19 +19,33 @@ const Landing = () => {
             enableWeb3({ provider: connectorId });
     }, [isAuthenticated, isWeb3Enabled]);
 
-    // Once authenticated, update address state
-    useEffect(() => {
-        if (isAuthenticated) {
-            setAddress(user.attributes.ethAddress);
-        }
-    }, [isAuthenticated]);
+    // // Once authenticated, update address state
+    // useEffect(() => {
+    //     if (isAuthenticated) {
+    //         setAddress(user.attributes.ethAddress);
+    //     }
+    // }, [isAuthenticated]);
+
+    const { connectWallet, address, error, provider } = useWeb3();
+
+    if (!address) {
+        return (
+            <div className="landing">
+                <h1>Welcome to Our NFT Analytics</h1>
+                <button
+                    onClick={() => connectWallet("injected")}
+                    className="btn-hero"
+                >
+                    Connect your wallet
+                </button>
+            </div>
+        );
+    }
 
     return (
         <React.Fragment>
             <Navbar />
-            <div>
-                Landing page
-            </div>
+            <div>Landing page</div>
         </React.Fragment>
     );
 };
