@@ -37,6 +37,8 @@ const Gallery = () => {
 
     const { connectWallet, address, error, provider } = useWeb3();
 
+    console.log("ASD", address)
+
     // Calls getNFTs when the component is mounted
     // and updates nfts state with fetched NFTs
     useEffect(() => {
@@ -53,6 +55,8 @@ const Gallery = () => {
                     }
                     temp.push(nft);
                 });
+                console.log("QWERTY", nfts)
+
 
                 groupedNFTs.push(temp);
                 // Update NFTs state with the grouped NFTs
