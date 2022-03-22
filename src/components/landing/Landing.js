@@ -27,7 +27,7 @@ const Landing = () => {
     // }, [isAuthenticated]);
 
     const { connectWallet, address, error, provider } = useWeb3();
-
+    //address = 0x7430Cb27C5E43d954030b0843d471203D88a2785
     if (!address) {
         return (
             <div className="landing">

@@ -9,8 +9,8 @@ const GalleryNFT = (nft) => {
     console.log("HELLO WORLD", nft.nft)
     return (
         <div className="gallery-nft">
-            <img src={metadata["image"]} />
-            <p>{metadata["name"]}</p>
+            <img className = "gallery-nft-image" src={metadata["image"]} />
+            <p className = "gallery-nft-name">{metadata["name"]}</p>
             {/* <p>{metadata["description"]}</p> */}
             
         </div>

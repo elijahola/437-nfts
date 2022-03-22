@@ -86,11 +86,19 @@ const Gallery = () => {
             <div className="gallery-wrapper">
                 <h1>Gallery</h1>
                 <div className="gallery">
-                    {address
+                    <div className="gallery-nft">
+                        <div className="img-container">
+                            <img className = "gallery-nft-image" src="https://imageio.forbes.com/specials-images/imageserve/6170e01f8d7639b95a7f2eeb/Sotheby-s-NFT-Natively-Digital-1-2-sale-Bored-Ape-Yacht-Club--8817-by-Yuga-Labs/0x0.png?fit=bounds&format=png&width=960" />
+                        </div>
+                        <p className = "gallery-nft-name">NFT name</p>
+                        {/* <p>{metadata["description"]}</p> */}
+                              
+                    </div>
+                    {/* {address
                         ? nfts.map((nftGroup, i) => {
                               return <GalleryRow nfts={nftGroup} key={i} />;
                           })
-                        : "No address found..."}
+                        : "No address found..."} */}
                 </div>
             </div>
         </React.Fragment>
