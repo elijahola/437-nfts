@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useMoralis } from "react-moralis";
 import Navbar from "../navbar/Navbar";
 import { useWeb3 } from "@3rdweb/hooks";
+import Hero from "../hero/hero";
 
 const Landing = () => {
     const {
@@ -45,7 +46,7 @@ const Landing = () => {
     return (
         <React.Fragment>
             <Navbar />
-            <div>Landing page</div>
+            <Hero/>
         </React.Fragment>
     );
 };

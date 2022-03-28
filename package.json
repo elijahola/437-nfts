@@ -8,6 +8,10 @@
   "dependencies": {
     "@3rdweb/hooks": "^1.6.0",
     "@3rdweb/sdk": "^1.27.1",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.2",
     "@walletconnect/web3-provider": "^1.7.3",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.2",
@@ -18,7 +22,8 @@
     "react-nft-gallery": "^0.6.2",
     "react-router": "^6.2.2",
     "react-router-dom": "^6.2.2",
-    "react-scripts": "^4.0.0"
+    "react-scripts": "^4.0.0",
+    "react-svg": "^14.1.16"
   },
   "scripts": {
     "start": "react-scripts start",
