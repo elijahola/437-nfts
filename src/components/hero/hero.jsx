@@ -6,27 +6,34 @@ import forum from '../../assets/forum.svg';
 import glass from '../../assets/glass.svg';
 import line from '../../assets/line.svg';
 import { Button } from '@mui/material';
+import "../../styles/hero/hero.css";
+import { Link } from 'react-router-dom';
 
 const Hero = () => (
   <div className="hero">
-    <div className="hero__container">
-      <div className="hero__background">
-        <ReactSVG className="hero__background-ellipse" src={chat} />
-        <ReactSVG className="hero__background-cloud1" src={forum} />
-        <ReactSVG className="hero__background-cloud2" src={glass} />
-        <ReactSVG className="hero__background-cloud3" src={line} />
+    <div className="herocontainer">
+      <div className="herobackground">
+        <ReactSVG width="12px" height="20px" viewBox="0 0 12 20" className="herobackgroundchat" src={chat} />
+        <ReactSVG width="12px" height="20px" viewBox="0 0 12 20" className="herobackgroundforum" src={forum} />
+        <ReactSVG width="12px" height="20px" viewBox="0 0 12 20" className="herobackgroundglass" src={glass} />
+        <ReactSVG width="12px" height="20px" viewBox="0 0 12 20" className="herobackgroundline" src={line} />
       </div>
-      <div className="hero__information">
-        <h1 className="hero__title">
-          <span className="hero__title_red">NFTs</span> is the new ‘
-          <span className="hero__title_red">cool</span>’
+      <div className="heroinformation">
+          <div className='float-child'>
+          <h1 className="herotitle">
+          <span className="herotitlered">NFTs</span> is the new ‘
+          <span className="herotitlered">cool</span>’
         </h1>
-        <p className="hero__text">
+        <p className="herotext">
           Now you can share some of the cutest JPEGS in the Metaverse.
         </p>
-        <p className="hero__text hero__text_red">Show off your gallery in our forums! </p>
-        <Button className="hero__calendar-btn" />
-        <ReactSVG className="hero__img" src={monkey} />
+        <p className="herotextred">Show off your gallery in our forums! </p>
+        <Link to="/gallery" style={{ textDecoration: 'none'}} className="button">Gallery</Link>
+              </div>
+        <div className='float-child'>
+        <ReactSVG className="heroimg" src={monkey} />
+            </div>
+        
       </div>
     </div>
   </div>

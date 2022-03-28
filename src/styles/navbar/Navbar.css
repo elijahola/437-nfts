@@ -1,7 +1,7 @@
 /*Desktop View*/
 .header {
     display: flex;
-    background: linear-gradient(yellow, red);
+    background: linear-gradient(#cb015b, magenta);
     justify-content: space-between;
     align-items: center;
     padding: 0px 40px;
@@ -44,8 +44,8 @@ a:active { text-decoration: none; }
     justify-content: center;
   }
   .logo {
-    width: 45px;
-    height: 45px;
+    width: 150px;
+    height: 150px;
   }
   .nav-options {
     padding-left: 25px;

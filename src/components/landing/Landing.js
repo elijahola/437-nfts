@@ -44,10 +44,11 @@ const Landing = () => {
     }
 
     return (
-        <React.Fragment>
+        <div>
             <Navbar />
+            <br></br>
             <Hero/>
-        </React.Fragment>
+        </div>
     );
 };
 
