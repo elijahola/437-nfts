@@ -3,6 +3,8 @@ import { useMoralis } from "react-moralis";
 import Navbar from "../navbar/Navbar";
 import { useWeb3 } from "@3rdweb/hooks";
 import Hero from "../hero/hero";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import "../../styles/landing/landing.css";
 
 const Landing = () => {
     const {
@@ -32,7 +34,11 @@ const Landing = () => {
     if (!address) {
         return (
             <div className="landing">
-                <h1>Welcome to Our NFT Analytics</h1>
+                <div className="logodiv">
+                <Logo className="logo" />
+                </div>
+                
+                <h3 className="landingtext">Show off your gallery to the metaverse! </h3>
                 <button
                     onClick={() => connectWallet("injected")}
                     className="btn-hero"
