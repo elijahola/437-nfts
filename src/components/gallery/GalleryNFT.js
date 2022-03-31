@@ -2,17 +2,28 @@ import React from "react";
 import "../../styles/gallery/Gallery.css";
 
 const GalleryNFT = (nft) => {
-    if (nft.nft.metadata === null) {
-        return "";
+    let metadata = {};
+
+    if (nft.nft.hasOwnProperty(metadata)) {
+        metadata = JSON.parse(nft.nft.metadata);
     }
-    const metadata = JSON.parse(nft.nft.metadata);
-    console.log("HELLO WORLD", nft.nft)
+
+    const name =
+        metadata.hasOwnProperty("name") === true
+            ? metadata["name"]
+            : "No name found!";
+    const description =
+        metadata.hasOwnProperty("description") === true
+            ? metadata["description"]
+            : "No description found!";
+    const image =
+        metadata.hasOwnProperty("image") === true ? metadata["image"] : "";
+
     return (
         <div className="gallery-nft">
-            <img src={metadata["image"]} />
-            <p>{metadata["name"]}</p>
-            {/* <p>{metadata["description"]}</p> */}
-            
+            <img src={image} />
+            <p>{name}</p>
+            <p>{description}</p>
         </div>
     );
 };
