@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Gallery from "./components/gallery/Gallery";
+import Forums from "./components/forums/forums";
 import {
     BrowserRouter as Router,
     Routes as Switch,
@@ -24,6 +25,7 @@ const App = () => {
                 <Switch>
                     <Route path="/" element={<Landing />} />
                     <Route exact path="/gallery" element={<Gallery />} />
+                    <Route exact path="/forums" element={<Forums />} />
                 </Switch>
             </Router>
         </React.Fragment>

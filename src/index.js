@@ -4,6 +4,7 @@ import { MoralisProvider } from "react-moralis";
 import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import "./styles/index.css";
 import Landing from "./components/landing/Landing";
+import Forums from "./components/forums/forums";
 import firebase from "./firebase/firebase.js"
 import {
     BrowserRouter as Router,
@@ -38,6 +39,7 @@ ReactDOM.render(
                 <Switch>
                     <Route path="/" element={<Landing />} />
                     <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/forums" element={<Forums />} />
                     <Route
                         path="*"
                         element={<h1>Page not found!</h1>}

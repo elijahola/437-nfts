@@ -14,9 +14,9 @@ const Header = () => {
     <div className="header" id="nav">
       <div className="logo-nav">
         <div className="logo-container">
-          <a href="#">
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <Logo className="logo" />
-          </a>
+          </Link>
     </div>
         </div>
         <div className="links">    
@@ -26,6 +26,9 @@ const Header = () => {
           </li>
           <li className="option" onClick={closeMobileMenu}>
           <Link to="/gallery" style={{ textDecoration: 'none'}}>Gallery</Link>
+          </li>
+          <li className="option" onClick={closeMobileMenu}>
+          <Link to="/forums" style={{ textDecoration: 'none'}}>Forums</Link>
           </li>
         </ul>
             </div>
