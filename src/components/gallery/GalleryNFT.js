@@ -1,7 +1,25 @@
 import React from "react";
 import "../../styles/gallery/Gallery.css";
+// import { useMoralis } from "react-moralis";
+// import { useMoralisWeb3Api } from "react-moralis";
+
+
+
+
 
 const GalleryNFT = (nft) => {
+
+//     const Web3Api = useMoralisWeb3Api();
+
+// const fetchNFTMetadata = async () => {
+//   const options = {
+//     address: Moralis.User.current().get("ethAddress"),
+//     chain: "rinkeby",
+//   };
+//   const metaData = await Web3Api.token.getNFTMetadata(options);
+//   console.log(metaData);
+// };
+
     let metadata = {};
 
     if (nft.nft.hasOwnProperty(metadata)) {
@@ -21,9 +39,8 @@ const GalleryNFT = (nft) => {
 
     return (
         <div className="gallery-nft">
-            <img src={image} />
-            <p>{name}</p>
-            <p>{description}</p>
+             <img className = "gallery-nft-image" src={metadata[image]} />
+            <p className = "gallery-nft-name">{metadata[name]}</p>
         </div>
     );
 };
