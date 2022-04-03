@@ -1,4 +1,4 @@
-# API base url:
+# API Base Url:
 
 http://54.86.150.173:3001
 
@@ -108,12 +108,13 @@ http://54.86.150.173:3001
 ## POST /follow
   Description:
   ```
-  Create a comment on a particular post
+  Follow a user
   ```
   
   Parameters:
   ```
-  int PostId // PostId of the post on which you want to add the comment
+  int followeeWalletAddress // Wallet address of current user
+  int followerWalletAddress // Wallet address of the user that the current user wants to follow
   ```
     
   Return value:
@@ -159,8 +160,9 @@ http://54.86.150.173:3001
   ```
   [
       {
-          "follower_wallet_address": "0x1234...",
-          "followee_wallet_address": "0x5678..."
+          "followee_wallet_address": "0x1234...",
+          "follower_wallet_address": "0x5678..."
       }
   ]
 ```
+
