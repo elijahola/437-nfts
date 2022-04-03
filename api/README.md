@@ -108,7 +108,7 @@ http://54.86.150.173:3001
 ## POST /follow
   Description:
   ```
-  Create a comment on a particular post
+  Follow a user
   ```
   
   Parameters:
