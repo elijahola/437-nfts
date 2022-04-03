@@ -113,7 +113,8 @@ http://54.86.150.173:3001
   
   Parameters:
   ```
-  int PostId // PostId of the post on which you want to add the comment
+  int followeeWalletAddress // Wallet address of current user
+  int followerWalletAddress // Wallet address of the user that the current user wants to follow
   ```
     
   Return value:
