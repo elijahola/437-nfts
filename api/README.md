@@ -160,8 +160,9 @@ http://54.86.150.173:3001
   ```
   [
       {
-          "follower_wallet_address": "0x1234...",
-          "followee_wallet_address": "0x5678..."
+          "followee_wallet_address": "0x1234...",
+          "follower_wallet_address": "0x5678..."
       }
   ]
 ```
+
