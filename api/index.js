@@ -8,7 +8,7 @@ const db = mysql.createPool({
     connectionLimit: 10,
     host: "localhost",
     user: "root",
-    password: "4410",
+    password: "1234",
     database: "nft",
 });
 
