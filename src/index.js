@@ -5,7 +5,6 @@ import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import "./styles/index.css";
 import Landing from "./components/landing/Landing";
 import Forums from "./components/forums/forums";
-import firebase from "./firebase/firebase.js"
 import {
     BrowserRouter as Router,
     Routes as Switch,

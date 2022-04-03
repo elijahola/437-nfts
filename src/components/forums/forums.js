@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { collection, query, where, getDocs } from "firebase/firestore";
 import Navbar from "../navbar/Navbar";
 
 const Forums = () => {

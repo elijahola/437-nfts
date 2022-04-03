@@ -4,7 +4,7 @@ import "../../styles/gallery/Gallery.css";
 const GalleryNFT = (nft) => {
     let metadata = {};
 
-    if (nft.nft.hasOwnProperty(metadata)) {
+    if (nft !== null && nft.nft !== null && nft.nft.metadata !== null) {
         metadata = JSON.parse(nft.nft.metadata);
     }
 
