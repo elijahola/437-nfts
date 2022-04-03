@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import { useWeb3 } from "@3rdweb/hooks";
 
@@ -9,7 +8,7 @@ const Forums = () => {
 
     // Gets all posts in reverse chronological order
     const getPosts = async () => {
-        const url = "http://localhost:3001/posts";
+        const url = "http://54.86.150.173:3001/";
         fetch(url, {
             method: "GET",
             headers: {
@@ -21,16 +20,17 @@ const Forums = () => {
     useEffect(async () => {
         let mounted = true;
         getPosts().then((allPosts) => {
-            console.log("Aasd", allPosts);
+            console.log("allPosts", allPosts);
             setPosts(allPosts);
         });
         return () => (mounted = false);
     }, []);
 
-    if (posts === undefined) {
+    if (posts.length === 0) {
         return (
             <div>
                 <Navbar />
+                <h1>Welcome to Our Forums</h1>
             </div>
         );
     }
@@ -39,8 +39,8 @@ const Forums = () => {
         <div className="forums">
             <Navbar />
             <h1>Welcome to Our Forums</h1>
+            {}
         </div>
     );
-    // });
 };
 export default Forums;
