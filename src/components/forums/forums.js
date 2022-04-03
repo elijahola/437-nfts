@@ -1,24 +1,46 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
+import { useWeb3 } from "@3rdweb/hooks";
 
 const Forums = () => {
-// const q = query(collection(db, "post_comments"), where("post_id", "==", 0));
+    const { connectWallet, address, error, provider } = useWeb3();
+    const [posts, setPosts] = useState([]);
 
-// const querySnapshot = await getDocs(q);
-// querySnapshot.forEach((doc) => {
-//   // doc.data() is never undefined for query doc snapshots
-//   console.log(doc.id, " => ", doc.data());
+    // Gets all posts in reverse chronological order
+    const getPosts = async () => {
+        const url = "http://localhost:3001/posts";
+        fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then((res) => res.json());
+    };
 
-  return (
-    <div className="forums">
-        <Navbar />
-        <h1>Welcome to Our Forums</h1>
-        {/* <div>{doc.data}</div>  */}
-    </div>
-);
-// });
+    useEffect(async () => {
+        let mounted = true;
+        getPosts().then((allPosts) => {
+            console.log("Aasd", allPosts);
+            setPosts(allPosts);
+        });
+        return () => (mounted = false);
+    }, []);
 
+    if (posts === undefined) {
+        return (
+            <div>
+                <Navbar />
+            </div>
+        );
+    }
 
+    return (
+        <div className="forums">
+            <Navbar />
+            <h1>Welcome to Our Forums</h1>
+        </div>
+    );
+    // });
 };
 export default Forums;
