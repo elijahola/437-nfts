@@ -8,7 +8,7 @@ const db = mysql.createPool({
     connectionLimit: 10,
     host: "localhost",
     user: "root",
-    password: "1234",
+    password: "4410",
     database: "nft",
 });
 
@@ -28,9 +28,18 @@ app.get("/", (req, res) => {
 app.get("/posts", (req, res) => {
     const query = "SELECT * FROM posts";
     db.query(query, function (error, results, fields) {
-        if (error) throw error;
+        if (error) {
+            res.send({
+                success: true,
+                error: error,
+            });
+            return;
+        }
         console.log("posts:", results);
-        res.send(results);
+        res.send({
+            success: true,
+            error: {},
+        });
     });
 });
 
@@ -68,9 +77,18 @@ app.post("/create_comment", (req, res) => {
         body: req.body.body,
     };
     db.query(query, preparedStatement, (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            res.send({
+                success: true,
+                error: error,
+            });
+            return;
+        }
         console.log("fetch_comments:", results);
-        res.send(results);
+        res.send({
+            success: true,
+            error: {},
+        });
     });
 });
 
@@ -81,9 +99,18 @@ app.post("/follow", (req, res) => {
         follower_wallet_address: req.body.followerWalletAddress,
     };
     db.query(query, preparedStatement, (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            res.send({
+                success: true,
+                error: error,
+            });
+            return;
+        }
         console.log("follow:", results);
-        res.send(results);
+        res.send({
+            success: true,
+            error: {},
+        });
     });
 });
 
@@ -95,9 +122,18 @@ app.post("/unfollow", (req, res) => {
         req.body.followerWalletAdress,
     ];
     db.query(query, preparedStatement, (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            res.send({
+                success: true,
+                error: error,
+            });
+            return;
+        }
         console.log("unfollow:", results);
-        res.send(results);
+        res.send({
+            success: true,
+            error: {},
+        });
     });
 });
 
