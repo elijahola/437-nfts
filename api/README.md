@@ -73,11 +73,10 @@ http://54.86.150.173:3001
   ```
     [
       {
+          "comment_id": 1,
           "post_id": 1,
           "author_wallet_address": "0x123...",
-          "title": "test title 1",
           "body": "test body 1",
-          "link": "testlink1.com",
           "date_created": "2022-04-03T02:28:29.000Z"
       },
       {
