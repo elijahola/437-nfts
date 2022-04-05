@@ -84,7 +84,7 @@ const Gallery = () => {
         <React.Fragment>
             <Navbar />
             <div className="gallery-wrapper">
-                <h1>Gallery</h1>
+                <h1 className="gallery-header">Gallery</h1>
                 <div className="gallery">
                     {address
                         ? nfts.map((nftGroup, i) => {

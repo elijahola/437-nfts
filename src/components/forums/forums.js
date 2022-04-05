@@ -147,91 +147,95 @@ const Forums = () => {
         <div className="forums">
             <Navbar />
             <h1>Welcome to Our Forums</h1>
-            <h2>Create a post</h2>
-            <input
-                onChange={(e) => setPostTitle(e.target.value)}
-                type="text"
-                placeholder="title"
-            />
-            <input
-                onChange={(e) => setPostBody(e.target.value)}
-                type="text"
-                placeholder="body"
-            />
-            <input
-                onChange={(e) => setPostLink(e.target.value)}
-                type="text"
-                placeholder="link"
-            />
-            <div>
-                <button
-                    onClick={() =>
-                        createPost(address, postTitle, postBody, postLink)
-                    }
-                >
-                    Create Post
-                </button>
+            <div id="create-post-wrapper">
+                <h2>Create a post</h2>
+                <input
+                    onChange={(e) => setPostTitle(e.target.value)}
+                    type="text"
+                    placeholder="title"
+                />
+                <input
+                    onChange={(e) => setPostBody(e.target.value)}
+                    type="text"
+                    placeholder="body"
+                />
+                <input
+                    onChange={(e) => setPostLink(e.target.value)}
+                    type="text"
+                    placeholder="link"
+                />
+                <div>
+                    <button
+                        onClick={() =>
+                            createPost(address, postTitle, postBody, postLink)
+                        }
+                    >
+                        Create Post
+                    </button>
+                </div>
             </div>
             <br />
-            <h2>All posts</h2>
-            {posts.map((post, i) => {
-                return (
-                    <div key={i}>
-                        {post.post.title}
-                        <br />
-                        {post.post.body}
-                        <br />
-                        <a className="black" href={post.post.link}>{post.post.link}</a>
-                        <br />
-                        <br/>
-                        comments:
-                        {post.comments.length !== 0 ? (
-                            post.comments.map((comment, i) => {
-                                return (
-                                    <div key={i}>
-                                        <br/>
-                                        {comment.body}
-                                        <br/>
-                                        By {comment.author_wallet_address}
-                                        <br/>
-                                        {comment.date_created}
-                                        <br/>
-
-                                    </div>
-                                    
-                                );
-                            })
-                        ) : (
-                            <React.Fragment>
-                                <br />
-                                "No comments!"
-                            </React.Fragment>
-                        )}
-                        <br />
-                        <div>
-                            <h2>Create comment:</h2>
-                            <input
-                                onChange={(e) => setComment(e.target.value)}
-                                type="text"
-                                placeholder="comment here..."
-                            />
+            <div id="posts-wrapper">
+                <h2>All posts</h2>
+                {posts.map((post, i) => {
+                    return (
+                        <div className= "posts" key={i}>
+                            {post.post.title}
                             <br />
-                            <button
-                                onClick={() =>
-                                    createComment(
-                                        address,
-                                        post.post.post_id,
-                                        comment
-                                    )
-                                }
-                            >
-                                Submit Comment
-                            </button>
+                            {post.post.body}
+                            <br />
+                            <a className="black" href={post.post.link}>{post.post.link}</a>
+                            <br />
+                            <br/>
+                            comments:
+                            {post.comments.length !== 0 ? (
+                                post.comments.map((comment, i) => {
+                                    return (
+                                        <div key={i}>
+                                            <br/>
+                                            {comment.body}
+                                            <br/>
+                                            By {comment.author_wallet_address}
+                                            <br/>
+                                            {comment.date_created}
+                                            <br/>
+
+                                        </div>
+                                        
+                                    );
+                                })
+                            ) : (
+                                <React.Fragment>
+                                    <br />
+                                    "No comments!"
+                                </React.Fragment>
+                            )}
+                            <br />
+                            <div>
+                                <h2>Create comment:</h2>
+                                <input
+                                    onChange={(e) => setComment(e.target.value)}
+                                    type="text"
+                                    placeholder="comment here..."
+                                />
+                                <br />
+                                <button
+                                    onClick={() =>
+                                        createComment(
+                                            address,
+                                            post.post.post_id,
+                                            comment
+                                        )
+                                    }
+                                >
+                                    Submit Comment
+                                </button>
+                            </div>
+                            ====================
                         </div>
-                        ====================
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
         </div>
     );
 };
