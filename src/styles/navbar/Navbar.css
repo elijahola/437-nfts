@@ -35,7 +35,7 @@ a:hover {
 color: black; }
 
 
-a:active { text-decoration: none; }
+a:active {color: black}
 
   .logo-nav {
     display: flex;
@@ -68,6 +68,9 @@ a:active { text-decoration: none; }
   }
   .option :hover {
     color: black;
+  }
+  .option :active{
+    color: black
   }
   @media (max-width: 648px) {
     /*Mobile View */

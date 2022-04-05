@@ -82,9 +82,9 @@ const Gallery = () => {
 
     return (
         <React.Fragment>
+            <div>
             <Navbar />
             <div className="gallery-wrapper">
-                <h1>Gallery</h1>
                 <div className="gallery">
                     {address
                         ? nfts.map((nftGroup, i) => {
@@ -93,6 +93,8 @@ const Gallery = () => {
                         : "No address found..."}
                 </div>
             </div>
+            </div>
+            
         </React.Fragment>
     );
 };
