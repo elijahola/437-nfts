@@ -1,18 +1,42 @@
 .black {
     color: black !important;
 }
-
-@media (min-width: 960px){
-    #posts-wrapper{
-        width: 640px;
-        position: relative;
-        left:40vw;
-        
-    }
+.createpost{
+background-color: whitesmoke;
 }
-.posts {
-    border-radius: 4px;
-    padding-left: 40px;
-    position: relative;
-    background: rgb(255, 255, 255);
+
+.createpost, h2{
+text-align: center;
+}
+
+.createpost, input{
+padding: 25px;
+gap: 25px;
+}
+
+.createpostbuttondiv{
+
+display: inline-block;
+}
+.createpostbutton{
+background-color: skyblue;
+}
+.createpostbutton :hover{
+background-color: black;
+}
+.postbody{
+    width:75%;
+    height: 200px;
+     margin: 0 -100px;
+}
+.posttitle{
+    width: 30%;
+}
+.postlink{
+    width: 30%;
+}
+
+.postview{
+    background-color: skyblue;
+    color: white;
 }
