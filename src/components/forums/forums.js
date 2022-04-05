@@ -154,43 +154,41 @@ const Forums = () => {
 
                 <div className="createpostinputs">
                     <div className="posttitlediv">
-                    <input
-                    className="posttitle"
-                    onChange={(e) => setPostTitle(e.target.value)}
-                    type="text"
-                    placeholder="Title"
-                />
+                        <input
+                        className="posttitle"
+                        onChange={(e) => setPostTitle(e.target.value)}
+                        type="text"
+                        placeholder="Title"
+                        />
                     </div>
-               <div className="postbodydiv"> 
-               <textarea
-               className="postbody"
-               onChange={(e) => setPostBody(e.target.value)}
-               type="text"
-               placeholder="What's on your mind?">    
-               </textarea>
-               </div>
+                    <div className="postbodydiv"> 
+                        <textarea
+                        className="postbody"
+                        onChange={(e) => setPostBody(e.target.value)}
+                        type="text"
+                        placeholder="What's on your mind?">    
+                        </textarea>
+                    </div>
 
-                <div className="postlinkdiv">
-                <input
-                    className="postlink"
-                    onChange={(e) => setPostLink(e.target.value)}
-                    type="text"
-                    placeholder="Add a custom link to your post here"
-                />
-                <div className="createpostbuttondiv">
-                    <button className="createpostbutton"
-                        onClick={() =>
-                            createPost(address, postTitle, postBody, postLink)
-                        }
-                    >
-                        Create Post
-                    </button>
-                </div>
-                </div>
+                    <div className="postlinkdiv">
+                        <input
+                            className="postlink"
+                            onChange={(e) => setPostLink(e.target.value)}
+                            type="text"
+                            placeholder="Add a custom link to your post here"
+                        />
+                        <div className="createpostbuttondiv">
+                            <button className="createpostbutton"
+                                onClick={() =>
+                                    createPost(address, postTitle, postBody, postLink)
+                                }
+                            >
+                                Create Post
+                            </button>
+                        </div>
+                    </div>
                 
-                
-                </div>
-                
+                </div> 
                 
             </div>
 
@@ -201,13 +199,14 @@ const Forums = () => {
                 {posts.map((post, i) => {
                     return (
                         <div className="postview" key={i}>
-                            {post.post.title}
+                            <div className="post-title">{post.post.title}</div>
                             <br />
-                            {post.post.body}
-                            <br />
+                            <div className="post-body">{post.post.body}</div>
+                            
                             <a className="black" href={post.post.link}>{post.post.link}</a>
                             <br />
                             <br />
+                            <hr></hr>
                             comments:
                             {post.comments.length !== 0 ? (
                                 post.comments.map((comment, i) => {
@@ -216,9 +215,9 @@ const Forums = () => {
                                             <br />
                                             {comment.body}
                                             <br />
-                                            By {comment.author_wallet_address}
-                                            <br />
-                                            {comment.date_created}
+                                            <div className="post-author">By {comment.author_wallet_address}</div>
+                                            
+                                            <div className="post-date">{comment.date_created}</div>
                                             <br />
 
                                         </div>
@@ -234,7 +233,7 @@ const Forums = () => {
                             <br />
                             <div className="comments">
                                 <div className="commentinput">
-                                    <h2>Create comment:</h2>
+                                    {/* <h2>Create comment:</h2> */}
                                     <input
                                         onChange={(e) => setComment(e.target.value)}
                                         type="text"
@@ -264,11 +263,14 @@ const Forums = () => {
 
                             </div>
                             <hr></hr>
+                            
                         </div>
+                        
+                        
                     );
                 })}
 
-
+                <br />
             </div>
 
         </div>

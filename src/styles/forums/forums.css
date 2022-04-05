@@ -3,6 +3,10 @@
 }
 .createpost{
 background-color: whitesmoke;
+width:40vw;
+position: absolute;
+left:50vw;
+
 }
 
 .createpost, h2{
@@ -24,6 +28,9 @@ background-color: skyblue;
 .createpostbutton :hover{
 background-color: black;
 }
+
+
+
 .postbody{
     width:75%;
     height: 200px;
@@ -36,7 +43,34 @@ background-color: black;
     width: 30%;
 }
 
+/* All Posts Div */
+@media (min-width: 640px){
+    .allposts{
+        border-radius: 4px;
+        padding-left: 40px;
+        width:40vw;
+        position: absolute;
+        left:10vw;
+        top:15vw;
+
+    }
+}
 .postview{
-    background-color: skyblue;
-    color: white;
+    background-color: rgb(252, 254, 254);
+    border:.14vw rgb(200, 200, 200) solid;
+    border-radius: .5vw;
+    color: rgb(0, 0, 0);
+    padding:4vw;
+    margin-bottom: 3vw;
+    font-size: 1vw;
+}
+.post-title{
+    color: rgb(138, 140, 140);
+    font-size: 3vw;
+}
+.commentbutton{
+    font-size: 1vw;
+}
+.post-author, .post-date{
+    color:rgb(138, 140, 140);
 }
