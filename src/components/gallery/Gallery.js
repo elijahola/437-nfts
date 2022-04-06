@@ -4,6 +4,7 @@ import "../../styles/gallery/Gallery.css";
 import GalleryRow from "./GalleryRow";
 import Navbar from "../navbar/Navbar";
 import { useWeb3 } from "@3rdweb/hooks";
+import banner from './../../assets/nftbanner.png';
 
 const Gallery = () => {
     const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
@@ -84,6 +85,7 @@ const Gallery = () => {
         <React.Fragment>
             <div>
             <Navbar />
+            <img src={banner} alt="Banner" />
             <div className="gallery-wrapper">
                 <div className="gallery">
                     {address
