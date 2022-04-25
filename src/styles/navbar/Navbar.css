@@ -4,7 +4,7 @@
     background: linear-gradient(skyblue, skyblue);
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px;
+    padding: 15px 40px;
     height: 80px;
     width: 100vw!important;
     text-align: justify;
@@ -35,7 +35,7 @@ a:hover {
 color: black; }
 
 
-a:active { text-decoration: none; }
+a:active {color: black}
 
   .logo-nav {
     display: flex;
@@ -68,6 +68,9 @@ a:active { text-decoration: none; }
   }
   .option :hover {
     color: black;
+  }
+  .option :active{
+    color: black
   }
   @media (max-width: 648px) {
     /*Mobile View */

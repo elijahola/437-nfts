@@ -1,24 +1,24 @@
 .hero{
     position: relative;
-    padding: 130px 0 259px;
+    padding: 75px 0 250px;
     font-size: 50px;
     line-height: 115%;
     margin-bottom: 24px;
     font-size: 24px;
     line-height: 150%;
-    max-width: 484px;
+    /* max-width: 484px; */
     margin-bottom: 14px;
 }
 .herocontainer{
     position: relative;
     color: black;
     margin: auto;
-  width: 50%;
+  width: 100%;
   border: 3px solid transparent;
   padding: 10px;
 }
 .heroinformation{
-    width: 992px;
+    width: 1200px;
     margin: 0 auto;
     position: relative;
     padding-bottom: 46px;
@@ -26,8 +26,8 @@
     padding: 20px;
     display: flex;
     
-  border: 3px solid transparent;
-  padding: 30px;
+    border: 3px solid transparent;
+    padding: 30px;
 }
 .herotitle{
     font-size: 50px;
@@ -53,7 +53,7 @@
     height: fit-content;
     position: absolute;
     z-index: 5;
-    right: 0;
+    right: 10%;
     bottom: -80px;
     display: block;
 }
@@ -62,18 +62,20 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
+    right: 20%;
 }
 .herobackgroundchat{
     position: absolute;
       left: 50%;
+      top: 7;
       transform: translateX(-40%);
       pointer-events: unset;
       size: 10px;
 }
-.herobackgroundforum{
+.herobackgroundline{
     position: absolute;
       bottom: -16px;
-      left: 50%;
+      left: 60%;
       transform: translateX(-200px);
       size: 10px;
 }
@@ -85,9 +87,10 @@
     transform: translateX(-30px);
     size: 5px;
 }
-.herobackgroundline{
+.herobackgroundforum{
     position: absolute;
-      left: 50%;
+      left: 40%;
+      top: 60%;
       bottom: 100px;
       transform: translateX(380px);
       size: 10px;

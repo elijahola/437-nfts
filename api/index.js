@@ -29,17 +29,11 @@ app.get("/posts", (req, res) => {
     const query = "SELECT * FROM posts";
     db.query(query, function (error, results, fields) {
         if (error) {
-            res.send({
-                success: true,
-                error: error,
-            });
+            res.send(error);
             return;
         }
         console.log("posts:", results);
-        res.send({
-            success: true,
-            error: {},
-        });
+        res.send(results);
     });
 });
 
@@ -52,7 +46,10 @@ app.post("/posts", (req, res) => {
         link: req.body.link,
     };
     db.query(query, preparedStatement, (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            res.send(error);
+            return;
+        }
         console.log("posts:", results);
         res.send(results);
     });
@@ -63,7 +60,10 @@ app.post("/fetch_comments", (req, res) => {
     const preparedStatement = [req.body.postId];
 
     db.query(query, preparedStatement, (error, results, fields) => {
-        if (error) throw error;
+        if (error) {
+            res.send(error);
+            return;
+        }
         console.log("fetch_comments:", results);
         res.send(results);
     });
@@ -78,17 +78,11 @@ app.post("/create_comment", (req, res) => {
     };
     db.query(query, preparedStatement, (error, results, fields) => {
         if (error) {
-            res.send({
-                success: true,
-                error: error,
-            });
+            res.send(error);
             return;
         }
-        console.log("fetch_comments:", results);
-        res.send({
-            success: true,
-            error: {},
-        });
+        console.log("create_comments:", results);
+        res.send(results);
     });
 });
 
@@ -100,17 +94,11 @@ app.post("/follow", (req, res) => {
     };
     db.query(query, preparedStatement, (error, results, fields) => {
         if (error) {
-            res.send({
-                success: true,
-                error: error,
-            });
+            res.send(error);
             return;
         }
         console.log("follow:", results);
-        res.send({
-            success: true,
-            error: {},
-        });
+        res.send(results);
     });
 });
 
@@ -123,17 +111,11 @@ app.post("/unfollow", (req, res) => {
     ];
     db.query(query, preparedStatement, (error, results, fields) => {
         if (error) {
-            res.send({
-                success: true,
-                error: error,
-            });
+            res.send(error);
             return;
         }
         console.log("unfollow:", results);
-        res.send({
-            success: true,
-            error: {},
-        });
+        res.send(results);
     });
 });
 
@@ -141,7 +123,10 @@ app.post("/followers", (req, res) => {
     const query = "SELECT * FROM followers WHERE followee_wallet_address = ?";
     const preparedStatement = [req.body.followeeWalletAddress];
     db.query(query, preparedStatement, function (error, results, fields) {
-        if (error) throw error;
+        if (error) {
+            res.send(error);
+            return;
+        }
         console.log("followers:", results);
         res.send(results);
     });
