@@ -194,9 +194,9 @@ const GalleryNFT = (nft) => {
     return (
         <div className="gallery-nft" >
             <img src={image} />
-            <p>{name}</p>
+            <h3>{name}</h3>
             <p>{description}</p>
-            <button  onClick={() =>
+            <button className="galleryButton" onClick={() =>
                 createPost(
                     address,
                     name,
@@ -210,48 +210,7 @@ const GalleryNFT = (nft) => {
 
 
 
-            {/* <div className="createpost">
-                <h2>Create a post</h2>
 
-                <div className="createpostinputs">
-                    <div className="posttitlediv">
-                        <input
-                        className="posttitle"
-                        onChange={(e) => setPostTitle(e.target.value)}
-                        type="text"
-                        placeholder="Title"
-                        />
-                    </div>
-                    <div className="postbodydiv"> 
-                        <textarea
-                        className="postbody"
-                        onChange={(e) => setPostBody(e.target.value)}
-                        type="text"
-                        placeholder="What's on your mind?">    
-                        </textarea>
-                    </div>
-
-                    <div className="postlinkdiv">
-                        <input
-                            className="postlink"
-                            onChange={(e) => setPostLink(e.target.value)}
-                            type="text"
-                            placeholder="Add a custom link to your post here"
-                        />
-                        <div className="createpostbuttondiv">
-                            <button className="createpostbutton"
-                                onClick={() =>
-                                    createPost(address, postTitle, postBody, postLink)
-                                }
-                            >
-                                Create Post
-                            </button>
-                        </div>
-                    </div>
-                
-                </div> 
-                
-            </div> */}
 
 
         </div>

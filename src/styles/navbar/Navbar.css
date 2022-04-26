@@ -1,7 +1,7 @@
 /*Desktop View*/
 .header {
     display: flex;
-    background: linear-gradient(skyblue, skyblue);
+    background: linear-gradient(rgb(190, 210, 218), rgb(175, 177, 177));
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
@@ -17,6 +17,7 @@
   }
   a {
     color: white;
+    font-family: monospace;
     text-align: center;
     font-weight: 5000;
     font-size: 25px;

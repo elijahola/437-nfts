@@ -152,7 +152,10 @@ const Forums = () => {
     return (
         <div className="forums">
             <Navbar />
-            <img src={banner} alt="Banner" />
+            <div id="banner-container">
+                <h1>Forums</h1>
+            </div>
+            {/* <img src={banner} alt="Banner" /> */}
             <div className="createpost">
                 <h2>Create a post</h2>
 
@@ -207,10 +210,12 @@ const Forums = () => {
                             <br />
                             <div className="post-body">{post.post.body}</div>
                             
-                            <img src ={post.post.link}   onError={({ currentTarget }) => {
-                                currentTarget.onerror = null; // prevents looping
-                                currentTarget.src=noimage;
-                            }} />
+                            <div className="img-container">
+                                <img className ="forumImg" src ={post.post.link}   onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null; // prevents looping
+                                    currentTarget.src=noimage;
+                                }} />
+                            </div>
                             {/* <a className="black" href={post.post.link}>{post.post.link}</a> */}
                             <br />
                             <br />

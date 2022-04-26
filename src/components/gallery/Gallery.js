@@ -85,7 +85,9 @@ const Gallery = () => {
         <React.Fragment>
             <div>
             <Navbar />
-            <img src={banner} alt="Banner" />
+            <div id="banner-container">
+                <h1>Gallery</h1>
+            </div>
             <div className="gallery-wrapper">
                 <div className="gallery">
                     {address

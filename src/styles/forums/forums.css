@@ -2,20 +2,26 @@
     color: black !important;
 }
 .createpost{
-background-color: whitesmoke;
-width:40vw;
-position: absolute;
-left:50vw;
+    background-color: hsl(215, 61%, 93%);
+    border:.14vw rgb(200, 200, 200) solid;
+    border-radius: .5vw;
+    width:30vw;
+    position: absolute;
+    left:58vw;
+    font-size: 1.25vw;
+    font-family: monospace;
 
 }
 
 .createpost, h2{
-text-align: center;
+    text-align: center;
 }
 
 .createpost, input{
 padding: 25px;
 gap: 25px;
+margin-bottom: 2vw;
+border:.14vw rgb(200, 200, 200) solid;
 }
 
 .createpostbuttondiv{
@@ -73,4 +79,19 @@ background-color: black;
 }
 .post-author, .post-date{
     color:rgb(138, 140, 140);
+}
+.img-container {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.forumImg{
+    position: relative;
+    top:2vw;
+    margin:  auto;
+    height: 250px;
+    width: 250px;
+    max-width: 300px;
 }
