@@ -3,6 +3,7 @@ import Navbar from "../navbar/Navbar";
 import { useWeb3 } from "@3rdweb/hooks";
 import "../../styles/forums/forums.css";
 import banner from './../../assets/nftbanner.png';
+import noimage from "../../assets/noimage.png"
 
 const Forums = () => {
     const { connectWallet, address, error, provider } = useWeb3();
@@ -31,6 +32,7 @@ const Forums = () => {
             title: title,
             body: postBody,
             link: link,
+            
         };
         const res = await fetch(url, {
             method: "POST",
@@ -171,12 +173,12 @@ const Forums = () => {
                     </div>
 
                     <div className="postlinkdiv">
-                        <input
+                        {/* <input
                             className="postlink"
                             onChange={(e) => setPostLink(e.target.value)}
                             type="text"
                             placeholder="Add a custom link to your post here"
-                        />
+                        /> */}
                         <div className="createpostbuttondiv">
                             <button className="createpostbutton"
                                 onClick={() =>
@@ -203,7 +205,11 @@ const Forums = () => {
                             <br />
                             <div className="post-body">{post.post.body}</div>
                             
-                            <a className="black" href={post.post.link}>{post.post.link}</a>
+                            <img src ={post.post.link}   onError={({ currentTarget }) => {
+    currentTarget.onerror = null; // prevents looping
+    currentTarget.src=noimage;
+  }} />
+                            {/* <a className="black" href={post.post.link}>{post.post.link}</a> */}
                             <br />
                             <br />
                             <hr></hr>

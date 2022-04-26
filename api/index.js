@@ -44,6 +44,7 @@ app.post("/posts", (req, res) => {
         title: req.body.title,
         body: req.body.body,
         link: req.body.link,
+        image:req.body.image,
     };
     db.query(query, preparedStatement, (error, results, fields) => {
         if (error) {
