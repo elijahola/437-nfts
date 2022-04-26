@@ -41,6 +41,7 @@ const Forums = () => {
             },
             body: JSON.stringify(body),
         });
+        window.location.reload();
         return res.json();
     };
 
@@ -74,6 +75,7 @@ const Forums = () => {
             body: JSON.stringify(body),
         });
         res = await res.json()
+        window.location.reload();
         return res;
     };
 
@@ -206,9 +208,9 @@ const Forums = () => {
                             <div className="post-body">{post.post.body}</div>
                             
                             <img src ={post.post.link}   onError={({ currentTarget }) => {
-    currentTarget.onerror = null; // prevents looping
-    currentTarget.src=noimage;
-  }} />
+                                currentTarget.onerror = null; // prevents looping
+                                currentTarget.src=noimage;
+                            }} />
                             {/* <a className="black" href={post.post.link}>{post.post.link}</a> */}
                             <br />
                             <br />
